@@ -44,7 +44,9 @@ function bawllm_setup_nav_menu_item( $item ) {
 									}
 									$item = apply_filters( 'bawregister_item', $item );
 									break;
-            default:                do_action('bawllm_setup_nav_menu_item', $item_url, $item); break;
+            default:                $item = apply_filters('bawllm_setup_nav_menu_item', $item_url, $item);
+                                    break;
+            
         }
 		$item->url = esc_url( $item->url );
 	}
@@ -54,7 +56,7 @@ function bawllm_setup_nav_menu_item( $item ) {
 add_filter( 'wp_nav_menu_objects', 'bawllm_wp_nav_menu_objects' );
 function bawllm_wp_nav_menu_objects( $sorted_menu_items ) {
 	foreach ( $sorted_menu_items as $k => $item ) {
-		if ( $item->title==$item->url && '#bawregister#' == $item->title ) {
+		if ( $item->title==$item->url &&  strstr( $item->url, '#baw' ) != '' ) {
 			unset( $sorted_menu_items[ $k ] );
 		}
 	}
