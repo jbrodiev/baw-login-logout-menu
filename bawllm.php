@@ -3,14 +3,14 @@
 Plugin Name: BAW Login/Logout menu
 Plugin URI: http://www.boiteaweb.fr/?p=3337
 Description: You can now add a correct login & logout link in your WP menus.
-Author: Juliobox
-Author URI: http://wp-rocket.me
-Version: 1.3.3
+Author: Juliobox, GregLone, jbrodiev
+Author URI: http://wp-rocket.me, https://flipgoal.com
+Version: 1.3.5
 */
 
-define( 'BAWLLM_VERSION', '1.3.3' );
+define( 'BAWLLM_VERSION', '1.3.5' );
 
-add_action( 'plugins_loaded', create_function( '', '
+add_action( 'plugins_loaded', function() {
 	$filename  = "inc/";
 	$filename .= is_admin() ? "backend-" : "frontend-";
 	$filename .= defined( "DOING_AJAX" ) && DOING_AJAX ? "" : "no";
@@ -23,5 +23,5 @@ add_action( 'plugins_loaded', create_function( '', '
 	$filename .= "ajax.inc.php";
 	if( file_exists( plugin_dir_path( __FILE__ ) . $filename ) )
 		include( plugin_dir_path( __FILE__ ) . $filename );
-' )
+	}
  );

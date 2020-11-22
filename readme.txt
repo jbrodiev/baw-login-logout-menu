@@ -1,12 +1,12 @@
 === Login Logout Menu ===
-Contributors: juliobox, GregLone
+Contributors: juliobox, GregLone, jbrodiev
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KJGT942XKWJ6W
 Tags: login, log in, logout, menu, nonce
 Requires at least: 3.0
-Tested up to: 4.3
+Tested up to: 5.5
 Stable tag: trunk
 
-Add real ‘Log in’ and ‘Logout’ links into your WordPress menus!
+Add real 'Log in' and 'Logout' links into your WordPress menus!
 
 == Description ==
 
@@ -51,6 +51,15 @@ There is a new hook (1.3.3) named 'bawregister_item", this is a menu item, when 
 1. The meta box in nav menu admin page
 
 == Changelog ==
+
+= 1.3.5 =
+* 22 November 2020
+* Updated to work with PHP 7.2
+
+= 1.3.4 =
+* 7 September 2015
+* New filter
+* Unset menu on self url
 
 = 1.3.3 =
 * 31 july 2015
